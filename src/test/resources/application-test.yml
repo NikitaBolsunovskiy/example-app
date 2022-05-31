@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: jdbc:tc:mysql:///test?currentSchema=public
+    username: root
+    password: root
+    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MariaDB103Dialect
+    open-in-view: false
+
+  flyway:
+    enabled: false
+
+logging:
+  level:
+    root: info
+
+server:
+  servlet:
+    context-path: /rt-backend
